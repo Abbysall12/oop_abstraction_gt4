@@ -1,17 +1,16 @@
-//import needed files
 import 'plant.dart';
 import 'peashooter.dart';
 
 void main() {
   // Create plants with peashooters in different positions
-  var frontLanePlant = Plant(PeaShooter('Front Lane'));
-  var midLanePlant = Plant(PeaShooter('Mid Lane'));
+  print('--- PeaShooter Demo ---');
+
+  var frontGuard = Plant('Front Guard', PeaShooter('Front Lane'));
+  var backGuard = Plant('Back Guard', PeaShooter('Back Lane'));
 
   // Demonstrate basic defense
-  print('=== Front Lane Defense ===');
-  frontLanePlant.defendLane('Basic Zombie');
+  frontGuard.defendLane('Basic Zombie');
 
-  // Demonstrate special attack
-  print('\n=== Mid Lane Attack ===');
-  midLanePlant.specialAttack('Cone Head Zombie');
+  // Demonstrate special action
+  backGuard.specialAction('Cone Head Zombie');
 }
