@@ -1,12 +1,14 @@
-//import shits here
-//don't forget screenshots each and every progress.
-
 import 'attacker.dart';
 import 'plant.dart';
+import 'gatling_pea.dart';
 
-void main{
-//put codes here for implementation of each class
-//erase the comments in this void after setting a zombie
-//then after you put codes here, put comments on
-//what the code do:>
+void main() {
+  // Demo label so console output is easy to read in the report
+  print('--- GatlingPea ---');
+
+  // Constructor injection: pass a concrete Attacker (GatlingPea) into Plant
+  var plant = Plant('Sunflower', GatlingPea(damage: 12, shotsPerSecond: 6));
+
+  // The consumer method delegates to the Attacker, producing polymorphic output
+  plant.defendLane('Buckethead Zombie');
 }
