@@ -1,12 +1,17 @@
-//import shits here
-//don't forget screenshots each and every progress.
-
-import 'attacker.dart';
+//import needed files
 import 'plant.dart';
+import 'peashooter.dart';
 
-void main{
-//put codes here for implementation of each class
-//erase the comments in this void after setting a zombie
-//then after you put codes here, put comments on
-//what the code do:>
+void main() {
+  // Create plants with peashooters in different positions
+  var frontLanePlant = Plant(PeaShooter('Front Lane'));
+  var midLanePlant = Plant(PeaShooter('Mid Lane'));
+
+  // Demonstrate basic defense
+  print('=== Front Lane Defense ===');
+  frontLanePlant.defendLane('Basic Zombie');
+
+  // Demonstrate special attack
+  print('\n=== Mid Lane Attack ===');
+  midLanePlant.specialAttack('Cone Head Zombie');
 }

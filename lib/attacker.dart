@@ -1,7 +1,6 @@
 //created a abstract class "Attacker"
-//idk how to explain this, if you can understand it and explain it...
-//just erase the previous comments here and replace it with your explanation.
+//This is the interface that all attackers must implement
 abstract class Attacker {
-  String get name;
+  // Method that must be implemented by any class that wants to be an attacker
   void attack(String target);
 }
