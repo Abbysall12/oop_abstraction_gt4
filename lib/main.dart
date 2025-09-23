@@ -1,14 +1,16 @@
-import 'attacker.dart';
 import 'plant.dart';
-import 'gatling_pea.dart';
+import 'peashooter.dart';
 
 void main() {
-  // Demo label so console output is easy to read in the report
-  print('--- GatlingPea ---');
+  // Create plants with peashooters in different positions
+  print('--- PeaShooter Demo ---');
 
-  // Constructor injection: pass a concrete Attacker (GatlingPea) into Plant
-  var plant = Plant('Sunflower', GatlingPea(damage: 12, shotsPerSecond: 6));
+  var frontGuard = Plant('Front Guard', PeaShooter('Front Lane'));
+  var backGuard = Plant('Back Guard', PeaShooter('Back Lane'));
 
-  // The consumer method delegates to the Attacker, producing polymorphic output
-  plant.defendLane('Buckethead Zombie');
+  // Demonstrate basic defense
+  frontGuard.defendLane('Basic Zombie');
+
+  // Demonstrate special action
+  backGuard.specialAction('Cone Head Zombie');
 }
