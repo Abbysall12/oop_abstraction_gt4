@@ -3,10 +3,16 @@ import 'peashooter.dart';
 import 'gatling_pea.dart';
 
 void main() {
-  // Create plants with peashooters in different positions
+  // Create plants with different peashooter configurations
   print('--- PeaShooter Demo ---');
-  var frontGuard = Plant('Front Guard', PeaShooter('Front Lane'));
-  var backGuard = Plant('Back Guard', PeaShooter('Back Lane'));
+  var frontGuard = Plant(
+    'Front Guard',
+    PeaShooter('Front Lane'),
+  ); // Default: 5 damage × 2 peas
+  var backGuard = Plant(
+    'Back Guard',
+    PeaShooter('Back Lane', damage: 8, peaCount: 3),
+  ); // Enhanced: 8 damage × 3 peas
 
   // Demonstrate basic defense with PeaShooter
   frontGuard.defendLane('Basic Zombie');
