@@ -1,28 +1,34 @@
-//import attacker.dart
 import 'attacker.dart';
 
-//create a class called 'plant'
+/// Consumer class that depends only on the `Attacker` abstraction.
+///
+/// A `Plant` can defend a lane or perform special actions by delegating to
+/// whatever `Attacker` it currently holds. The concrete attacker (e.g.,
+/// `GatlingPea`) is provided from the outside (constructor injection), so the
+/// `Plant` does not need to know implementation details.
 class Plant {
+  /// Display name of the plant instance shown in the console.
   final String name;
+
+  /// The injected dependency. Any class implementing `Attacker` is valid.
   Attacker attacker;
 
-  //constructor
+  /// Constructor injection: we receive an `Attacker` implementation here.
   Plant(this.name, this.attacker);
 
-  //methods
-  //this method calls the attacker class
+  /// Simulates the plant defending its lane by using the current attacker.
   void defendLane(String target) {
     print('$name defends the lane using ${attacker.name} against $target');
     attacker.attack(target);
   }
 
-  //same here
+  /// Another consumer method to show the same dependency in a different flow.
   void specialAction(String target) {
     print('$name triggers special action with ${attacker.name} on $target');
     attacker.attack(target);
   }
 
-  //A setter to set an attacker(a zombie)
+  /// Allows swapping the attacker at runtime without changing `Plant` logic.
   void setAttacker(Attacker newAttacker) {
     attacker = newAttacker;
   }
