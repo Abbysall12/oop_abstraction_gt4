@@ -17,8 +17,12 @@ class GatlingPea implements Attacker {
   @override
   String get name => 'GatlingPea';
 
+   /// Calculate total damage from all peas
+  int get totalDamage => damage * shotsPerSecond;
+
   @override
   void attack(String target) {
-    print('[GatlingPea] $target takes rapid fire: $damage damage × $shotsPerSecond shots/sec!');
+    print('[Gatling Pea]');
+    print('Damage dealt: $totalDamage ($damage × $shotsPerSecond peas)');
   }
 }
